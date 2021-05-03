@@ -5,6 +5,7 @@ const AssetsPlugin = require('assets-webpack-plugin');
 module.exports = {
 	entry: {
 		landingSubscription: './src/assets/js/index-landing-subscription.js',
+		adminDashboard: './src/assets/js/index-admin-dashboard.js',
 	},
 	output: {
 		path: path.resolve(__dirname, './dist/js/'),
