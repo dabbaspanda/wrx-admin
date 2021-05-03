@@ -24,6 +24,7 @@ function getScripts() {
 		.then((assets) => (
 			{
 				landingSubscription: `${assetPrefix}/admin/dist/js/${assets.landingSubscription.js}`,
+				adminDashboard: `${assetPrefix}/admin/dist/js/${assets.adminDashboard.js}`,
 			}
 		));
 }
