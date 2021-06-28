@@ -8,5 +8,3 @@ const headers = {
 	Pragma: 'no-cache',
 	Expires: '-1',
 };
-
-

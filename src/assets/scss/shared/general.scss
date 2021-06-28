@@ -1,0 +1,44 @@
+@import './colors.scss';
+@import './fonts.scss';
+@import './media-query.scss';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $font-sans;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+button,
+input {
+	border: none;
+	outline: none;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	height: auto;
+	width: 100%;
+}
