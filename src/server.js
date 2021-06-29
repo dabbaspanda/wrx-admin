@@ -12,7 +12,7 @@ const dotenvConfig = {
 require('dotenv').config(dotenvConfig);
 
 const cookieUtils = require('./app/shared/cookieUtils');
-const landingSubscriptionService = require('./app/newsletter/landingSubscriptionService.js');
+const adminDashboardService = require('./app/adminDashboardService.js');
 const apiService = require('./app/shared/apiService.js');
 
 const app = express();
@@ -43,20 +43,18 @@ app.use((req, res, next) => {
 
 
 /**
- * Serves landing subscription page.
+ * Serves Admin Dashboard page.
  * @param {Object} req request.
  * @param {Object} res response.
  */
-async function serveNewsletters(req, res) {
+async function serveAdminDashboard(req, res) {
 	const isEurope = req.headers['x-is-eu'] === 'true';
-	const data = await landingSubscriptionService.preparePage(isEurope);
+	const data = await adminDashboardService.preparePage(isEurope);
 	res.header('Vary', 'X-Country-Code');
-	res.render('landing-subscription', data);
+	res.render('admin-dashboard', data);
 }
 
-
-
-app.get('/', serveNewsletters);
+app.get('/', serveAdminDashboard);
 
 // Status page
 app.get('/status', (req, res) => {

@@ -1,9 +1,8 @@
-const apiService = require('../shared/apiService');
-const assetsService = require('../shared/assetsService.js');
-const serverConfigService = require('../shared/serverConfigService');
+const assetsService = require('./shared/assetsService.js');
+const serverConfigService = require('./shared/serverConfigService');
 
 /**
- * Return data needed for Landing Subscription page.
+ * Return data needed for Admin Dashboard page.
  * @param {boolean} [isUS=false] locale
  * @param {boolean} isEurope True if the user is from the EU, false otherwise.
  * @returns {Object} page data for the view.
@@ -16,10 +15,10 @@ async function preparePage(isEurope = false) {
 	};
 
 	return Promise.all([
-		assetsService.getStyles('landing-subscription'),
+		assetsService.getStyles('admin-dashboard'),
 		assetsService.getScripts(),
 	]).then(([styles, scripts]) => ({
-		assets: 'landing-subscription',
+		assets: 'admin-dashboard',
 		scripts,
 		serverData,
 		styles,
